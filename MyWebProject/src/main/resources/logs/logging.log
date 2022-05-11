@@ -1,0 +1,67 @@
+2022-05-11 04:55:18 INFO  AddBookServlet:35 - Get method working
+2022-05-11 04:55:34 INFO  AddBookServlet:21 - Post method working
+2022-05-11 04:55:34 INFO  DBHelper:86 - Get list of books from database
+2022-05-11 04:55:35 INFO  AddBookServlet:35 - Get method working
+2022-05-11 04:56:10 INFO  AddBookServlet:45 - Get method working
+2022-05-11 04:56:17 INFO  AddBookServlet:50 - Get method working
+2022-05-11 04:56:24 INFO  AddBookServlet:22 - Post method working
+2022-05-11 04:56:24 INFO  DBHelper:53 - Get book from database
+2022-05-11 04:56:24 INFO  AddBookServlet:32 - Trying to send an object to DownloadServlet
+2022-05-11 04:56:24 INFO  AddBookServlet:59 - Determining link availability
+2022-05-11 04:56:24 INFO  AddBookServlet:50 - Get method working
+2022-05-11 04:56:26 INFO  AddBookServlet:23 - Get method working
+2022-05-11 04:56:26 WARN  AddBookServlet:31 - File download process
+2022-05-11 05:09:28 INFO  AddBookServlet:45 - Get method working
+2022-05-11 05:09:51 INFO  AddBookServlet:23 - Post method working
+2022-05-11 05:09:51 INFO  DBHelper:20 - Add book to database
+2022-05-11 05:09:51 INFO  AddBookServlet:45 - Get method working
+2022-05-11 21:23:05 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:23:22 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:23:22 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:23:23 ERROR AddBookServlet:95 - Exception in downloadFileFromUser method
+2022-05-11 21:24:01 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:24:12 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:24:12 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:24:12 ERROR AddBookServlet:95 - Exception in downloadFileFromUser method
+2022-05-11 21:26:03 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:26:16 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:26:16 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:26:17 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:26:44 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:26:44 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:26:44 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:28:56 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:28:56 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:28:56 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:31:07 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:31:24 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:31:24 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:31:25 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:31:33 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:31:33 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:31:33 ERROR AddBookServlet:95 - Exception in downloadFileFromUser method
+2022-05-11 21:36:44 INFO  AddBookServlet:54 - Get method working
+2022-05-11 21:36:49 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:36:49 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:36:50 ERROR AddBookServlet:95 - Exception in downloadFileFromUser method
+2022-05-11 21:39:55 INFO  AddBookServlet:55 - Get method working
+2022-05-11 21:40:05 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:40:05 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:40:06 INFO  AddBookServlet:55 - Get method working
+2022-05-11 21:40:15 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:40:15 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:40:15 INFO  AddBookServlet:55 - Get method working
+2022-05-11 21:42:25 INFO  AddBookServlet:55 - Get method working
+2022-05-11 21:42:34 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:42:34 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:42:34 INFO  AddBookServlet:55 - Get method working
+2022-05-11 21:42:43 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:42:43 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:42:43 INFO  AddBookServlet:55 - Get method working
+2022-05-11 21:43:25 INFO  AddBookServlet:55 - Get method working
+2022-05-11 21:43:30 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:43:30 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:43:31 INFO  AddBookServlet:55 - Get method working
+2022-05-11 21:43:39 INFO  AddBookServlet:32 - Post method working
+2022-05-11 21:43:39 INFO  DBHelper:29 - Add book to database
+2022-05-11 21:43:39 INFO  AddBookServlet:55 - Get method working
