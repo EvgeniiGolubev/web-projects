@@ -113,9 +113,11 @@ public class DBHelper {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-                 Statement statement = connection.createStatement()) {
+                 PreparedStatement preparedStatement = connection.prepareStatement("select book from Books where author = ?")) {
 
-                ResultSet findAllBooks = statement.executeQuery("select book from Books where author = '" + author + "'");
+                preparedStatement.setString(1, authorName);
+
+                ResultSet findAllBooks = preparedStatement.executeQuery();
                 while (findAllBooks.next()) {
                     books.add(new Book(author, findAllBooks.getString("book")));
                 }

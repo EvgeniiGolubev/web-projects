@@ -1,1 +1,2 @@
 В нашем приложении будут реализованы CRUD (Create, Read, Update, Delete) операции над клиентами
+CRUD запросы без отображения, использовал Spring и postgresql
