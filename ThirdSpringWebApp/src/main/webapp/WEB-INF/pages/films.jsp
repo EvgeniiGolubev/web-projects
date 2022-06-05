@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<h2>Films</h2>
+<h2>Фильмы</h2>
 
 <table>
     <tr>
