@@ -1,40 +1,43 @@
 package com.example.service;
 
+import com.example.dao.PersonDAO;
 import com.example.models.Person;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PersonServiceImpl implements PersonService {
+    private final PersonDAO personDAO;
+
+    @Autowired
+    public PersonServiceImpl(PersonDAO personDAO) {
+        this.personDAO = personDAO;
+    }
+
     @Override
     public List<Person> getAllPeople() {
-        List<Person> list = new ArrayList<>();
-        list.add(new Person(1, "Миша", 12, "misha@mail.com", "79998887766"));
-        list.add(new Person(2, "Маша", 9, "masha@mail.com", "+79998887766"));
-        list.add(new Person(2, "Леша", 7, "lesha@mail.com", "+7-999-888-77-66"));
-        list.add(new Person(2, "Паша", 11, "pasha@mail.com", "89998887766"));
-        return list;
+        return personDAO.getAllPeople();
     }
 
     @Override
     public void addPerson(Person person) {
-
+        personDAO.addPerson(person);
     }
 
     @Override
-    public void deletePerson(Person person) {
-
+    public void deletePerson(int id) {
+        personDAO.deletePerson(id);
     }
 
     @Override
-    public void editPerson(Person person) {
-
+    public void updatePerson(int id, Person person) {
+        personDAO.updatePerson(id, person);
     }
 
     @Override
     public Person getPersonById(int id) {
-        return null;
+        return personDAO.getPersonById(id);
     }
 }

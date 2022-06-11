@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/res/styles/person-info-style.css" type="text/css"/>
+</head>
+<body>
+
+<div class="photo">
+    <img src="/res/cat.jpg" alt="img">
+</div>
+
+<div class="info">
+    <h1>Личная картока</h1>
+    <p th:text="${person.getName()}">name</p>
+    <p th:text="${person.getAge()}">age</p>
+    <p th:text="${person.getEmail()}">email</p>
+    <p th:text="${person.getTelephoneNumber()}">telephone number</p>
+</div>
+
+<div class="update_wrap">
+    <button type="button" class="btn btn_add">Изменить анкету</button>
+</div>
+
+<div id="form-wrap" class="table-wr">
+    <div class="update-form">
+        <form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
+            <input type="text" th:field="*{name}" id="name">
+            <input type="text" th:field="*{age}" id="age">
+            <input type="text" th:field="*{email}" id="email">
+            <input type="text" th:field="*{telephoneNumber}" id="telephoneNumber">
+
+            <button class="btn" type="submit">Изменить</button>
+        </form>
+    </div>
+</div>
+
+<div class="delete_wrap">
+    <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+        <button class="btn" type="submit">Удалить анкету</button>
+    </form>
+</div>
+
+<script>
+    const button = document.querySelector('button');
+    const form = document.querySelector('#form-wrap');
+
+    button.addEventListener('click', () => {
+        form.classList.add('open');
+    });
+</script>
+
+<a href="/people">
+    <button class="btn">Назад</button>
+</a>
+</body>
+</html>

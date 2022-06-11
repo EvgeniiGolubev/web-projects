@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Person</title>
+    <link rel="stylesheet" href="/res/styles/all-people-style.css" type="text/css"/>
+</head>
+<body>
+
+<div class="outer">
+    <div class="middle">
+        <div class="inner">
+
+            <div class="table-wr">
+                <h2>Список учащихся</h2>
+                <table>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Возраст</th>
+                        <th>Почта</th>
+                        <th>Номер телефона</th>
+                        <th>Информация</th>
+                    </tr>
+                    <tr th:each="person : ${people}">
+                        <td th:text="${person.getName()}"></td>
+                        <td th:text="${person.getAge()}"></td>
+                        <td th:text="${person.getEmail()}"></td>
+                        <td th:text="${person.getTelephoneNumber()}"></td>
+                        <td><a th:href="@{/people/{id}(id = ${person.getId()})}">Личная карточка</a></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <button type="button" class="btn_add">Добавить ученика</button>
+
+            <div id="form-wrap" class="table-wr">
+                <div class="form">
+                    <form role="form" autocomplete="off" th:action="@{/people}" th:object="${person}" th:method="POST">
+                        <input required type="text" th:field="*{name}" id="name" placeholder="ФИО" pattern="^[А-Яа-яЁё\s]+$">
+                        <input required type="number" th:field="*{age}" id="age" placeholder="Возраст">
+                        <input required type="email" th:field="*{email}" id="email" placeholder="Электронная почта">
+                        <input required type="tel" th:field="*{telephoneNumber}" id="telephoneNumber"
+                               placeholder="Номер телефона">
+                        <textarea name="comment" placeholder="Дополнительная информация"></textarea>
+                        <button type="submit">Добавить</button>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                const button = document.querySelector('button');
+                const form = document.querySelector('#form-wrap');
+
+                button.addEventListener('click', () => {
+                    form.classList.add('open');
+                });
+            </script>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

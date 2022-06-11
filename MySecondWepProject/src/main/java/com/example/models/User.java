@@ -1,9 +1,8 @@
 package com.example.models;
-//TODO проверить как правильно хранят пароли
+
 public class User {
     private String name;
     private String password;
-
     public User() {}
 
     public User(String name, String password) {

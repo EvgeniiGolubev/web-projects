@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+html, body {
+    height : 100%;
+    padding: 0;
+    margin: 0;
+    background : #29475f;
+    min-height: 400px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.middle {
+    display: table-cell;
+    vertical-align: top;
+}
+.inner {
+    text-align: center;
+    width: auto;
+    padding: 0 15px;
+}
+
+.table-wr {
+    position: relative;
+    margin: 20px auto;
+    background: #ecf0f1;
+    border-radius: 5px;
+    border-top: 4px solid #2196f3;
+    box-shadow: 3px 3px 10px #333;
+    padding: 15px;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2em;
+    margin-top: 10px;
+    color: #34495e;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px;
+    border-bottom: #333333 1px solid;
+
+}
+
+.form {
+    padding-top: 20px;
+    text-align: center;
+}
+
+input,
+button,
+textarea {
+    width: 80%;
+    margin-bottom: 25px;
+    height: 40px;
+    border-radius: 5px;
+    outline: 0;
+    -moz-outline-style: none;
+}
+
+input,
+textarea {
+    border: 1px solid #bbb;
+    padding: 0 0 0 10px;
+    font-size: 14px;
+}
+
+button {
+    background: #2196f3;
+    border:none;
+    color: white;
+    font-size: 18px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: box-shadow .4s ease;
+}
+
+.btn_add {
+    width: 20%;
+    float: right;
+}
+
+
+#form-wrap {
+    display: none;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+}
+
+#form-wrap.open {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
