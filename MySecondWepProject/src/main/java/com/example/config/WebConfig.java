@@ -25,16 +25,9 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.example")
-@PropertySource(value = "classpath:db.properties")
+@ComponentScan(basePackages = "com.example")
 public class WebConfig implements WebMvcConfigurer {
     private ApplicationContext applicationContext;
-    private Environment environment;
-
-    @Autowired
-    public void setEnvironment(Environment environment) {
-        this.environment = environment;
-    }
 
     @Autowired
     public void setApplicationContext(ApplicationContext applicationContext) {
@@ -64,23 +57,6 @@ public class WebConfig implements WebMvcConfigurer {
         templateEngine.setTemplateResolver(templateResolver());
         templateEngine.setEnableSpringELCompiler(true);
         return templateEngine;
-    }
-
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
-        dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));
-        dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
-        dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
-        dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
-
-        return  dataSource;
-    }
-
-    @Bean
-    public JdbcTemplate jdbcTemplate() {
-        return new JdbcTemplate(dataSource());
     }
 
     @Override

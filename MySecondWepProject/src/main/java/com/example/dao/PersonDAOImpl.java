@@ -1,58 +1,50 @@
 package com.example.dao;
 
 import com.example.models.Person;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //TODO посмотреть как правильно создавать таблицы (сколько знаков знаков нужно для имайла)
-//TODO перейти на Hibernet
-@Component
+@Repository
 public class PersonDAOImpl implements PersonDAO {
-    private final JdbcTemplate jdbcTemplate;
+    private SessionFactory sessionFactory;
 
     @Autowired
-    public PersonDAOImpl(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public PersonDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
     public List<Person> getAllPeople() {
-        return jdbcTemplate.query("SELECT * FROM people", new BeanPropertyRowMapper<>(Person.class));
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("from Person").list();
     }
 
     @Override
     public void addPerson(Person person) {
-        jdbcTemplate.update("INSERT INTO people (name, age, email, telephoneNumber) VALUES (?, ?, ?, ?)",
-                person.getName(),
-                person.getAge(),
-                person.getEmail(),
-                person.getTelephoneNumber());
+        Session session = sessionFactory.getCurrentSession();
+        session.persist(person);
     }
 
     @Override
-    public void deletePerson(int id) {
-        jdbcTemplate.update("DELETE FROM people WHERE id=?", id);
+    public void deletePerson(Person person) {
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(person);
     }
 
     @Override
-    public void updatePerson(int id, Person person) {
-        jdbcTemplate.update("UPDATE people SET name=?, age=?, email=?, telephoneNumber=? WHERE id=?",
-                person.getName(),
-                person.getAge(),
-                person.getEmail(),
-                person.getTelephoneNumber(),
-                id);
+    public void updatePerson(Person person) {
+        Session session = sessionFactory.getCurrentSession();
+        session.update(person);
     }
 
     @Override
     public Person getPersonById(int id) {
-        return jdbcTemplate.query("SELECT * FROM people WHERE id=?", new Object[] {id}, new BeanPropertyRowMapper<>(Person.class))
-                .stream().findAny().orElse(null);
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Person.class, id);
     }
 }

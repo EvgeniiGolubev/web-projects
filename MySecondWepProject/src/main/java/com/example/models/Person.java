@@ -1,21 +1,39 @@
 package com.example.models;
 
-// POJO для отображения информации в таблице
+import javax.persistence.*;
+
+@Entity
+@Table(name = "people")
 public class Person {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "age")
     private int age;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "telephoneNumber")
     private String telephoneNumber;
+
+    @Column(name = "paid")
+    private boolean paid;
 
     public Person() {}
 
-    public Person(int id, String name, int age, String email, String telephoneNumber) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.email = email;
-        this.telephoneNumber = telephoneNumber;
+    public boolean isPaid() {
+        return paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 
     public int getId() {

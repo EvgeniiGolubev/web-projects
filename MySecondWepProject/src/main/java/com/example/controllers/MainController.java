@@ -65,13 +65,14 @@ public class MainController {
 
     @DeleteMapping("/people/{id}")
     public String deletePerson(@PathVariable("id") int id) {
-        personService.deletePerson(id);
+        Person person = personService.getPersonById(id);
+        personService.deletePerson(person);
         return "redirect:/people";
     }
 
     @PatchMapping("/people/{id}")
     public String updatePerson(@ModelAttribute("person") Person person, @PathVariable("id") int id) {
-        personService.updatePerson(id, person);
+        personService.updatePerson(person);
         return "redirect:/people/" + id;
     }
 

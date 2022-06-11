@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.dao.PersonDAO;
 import com.example.models.Person;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,26 +18,31 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    @Transactional
     public List<Person> getAllPeople() {
         return personDAO.getAllPeople();
     }
 
     @Override
+    @Transactional
     public void addPerson(Person person) {
         personDAO.addPerson(person);
     }
 
     @Override
-    public void deletePerson(int id) {
-        personDAO.deletePerson(id);
+    @Transactional
+    public void deletePerson(Person person) {
+        personDAO.deletePerson(person);
     }
 
     @Override
-    public void updatePerson(int id, Person person) {
-        personDAO.updatePerson(id, person);
+    @Transactional
+    public void updatePerson(Person person) {
+        personDAO.updatePerson(person);
     }
 
     @Override
+    @Transactional
     public Person getPersonById(int id) {
         return personDAO.getPersonById(id);
     }
