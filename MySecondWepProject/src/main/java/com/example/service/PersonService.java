@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.models.Person;
+import com.example.entities.Person;
 
 import java.util.List;
 

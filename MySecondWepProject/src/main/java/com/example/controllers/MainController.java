@@ -1,7 +1,6 @@
 package com.example.controllers;
 
-import com.example.models.Person;
-import com.example.models.User;
+import com.example.entities.Person;
 import com.example.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,31 +16,9 @@ public class MainController {
         this.personService = personService;
     }
 
-    @GetMapping()
+    @GetMapping("/")
     public String main() {
         return "main-page";
-    }
-
-    @GetMapping("/login")
-    public String loginRequest(@ModelAttribute("user") User user) {
-        return "login/login-page";
-    }
-
-    @PostMapping("/login")
-    public String loginResponse(@ModelAttribute("user") User user) {
-        //TODO проверять юзера
-        System.out.println(user);
-        return "redirect:/people";
-    }
-
-    @GetMapping("/registration")
-    public String registrationRequest() {
-        return "registration/registration-page";
-    }
-
-    @PostMapping("/registration")
-    public String registrationResponse() {
-        return null;
     }
 
     @GetMapping("/people")
@@ -53,7 +30,6 @@ public class MainController {
     @PostMapping("/people")
     public String addNewPerson(@ModelAttribute("person") Person person) {
         personService.addPerson(person);
-        System.out.println(person);
         return "redirect:/people";
     }
 

@@ -1,7 +1,7 @@
 package com.example.service;
 
 import com.example.dao.PersonDAO;
-import com.example.models.Person;
+import com.example.entities.Person;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
